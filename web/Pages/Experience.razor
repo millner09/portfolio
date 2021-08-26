@@ -13,7 +13,7 @@
 		<div class="subheading mb-3">@job.Employer</div>
 		<p>@job.Description</p>
 	   </div>
-	   <div class="flex-shrink-0"><span class="text-primary">@job.StartDate.ToShortDateString() - @(job.EndDate != null ? job.EndDate.Value.ToShortDateString() : "present")</span></div>
+	   <div class="flex-shrink-0"><span class="text-primary">@job.StartDate.ToString("MM/yyyy") - @(job.EndDate != null ? job.EndDate.Value.ToString("MM/yyyy") : "Present")</span></div>
 	  </div>
 		}
  </div>
