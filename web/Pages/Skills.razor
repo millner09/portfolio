@@ -1,33 +1,35 @@
 @page "/skills"
+
 <section class="resume-section" id="skills">
     <div class="resume-section-content">
         <h2 class="mb-5">Skills</h2>
         <div class="subheading mb-3">Programming Languages & Tools</div>
         <ul class="list-inline dev-icons">
             <!-- in your body -->
-            @foreach(var icon in devIcons)
+            @foreach (var icon in devIcons)
             {
 
-            <li class="list-inline-item">
-                <i class="@icon"></i>
-            </li>
-            } 
+                <li class="list-inline-item">
+                    <i class="@icon"></i>
+                </li>
+            }
         </ul>
         <div class="subheading mb-3">Other Languages & Tools</div>
         <ul class="fa-ul mb-0">
-            @foreach(var tool in otherTools)
+            @foreach (var tool in otherTools)
             {
 
-            <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>
-                @tool
-            </li>
+                <li>
+                    <span class="fa-li"><i class="fas fa-check"></i></span>
+                    @tool
+                </li>
             }
         </ul>
     </div>
 </section>
 
 @code{
+
     private List<string> devIcons = new List<string>
     {
         "devicon-csharp-plain",
