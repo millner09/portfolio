@@ -1,5 +1,6 @@
-@using web.Data
 @page "/Education"
+@inherits EducationBase
+
 <section class="resume-section" id="education">
 	<div class="resume-section-content">
 		<h2 class="mb-5">Education</h2>
@@ -16,16 +17,3 @@
 		}
  </div>
 </section>
-
-@code {
-	private List<SchoolRecord> schoolRecords = new List<SchoolRecord>
-	{
-	new SchoolRecord
-	{
-	Name = "University of North Dakota",
-	Degree = "B.S. Computer Science",
-	StartDate = new DateTime(2009,08,20),
-	EndDate = new DateTime(2017,12,16)
-	}
-	};
-}

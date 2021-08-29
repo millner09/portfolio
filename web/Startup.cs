@@ -1,3 +1,5 @@
+using application.Education;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
-using web.Data;
 
 namespace web
 {
@@ -39,7 +40,8 @@ namespace web
                 })
                 .AddMicrosoftIdentityUI();
             services.AddServerSideBlazor().AddMicrosoftIdentityConsentHandler();
-            services.AddSingleton<WeatherForecastService>();
+
+            services.AddMediatR(typeof(List.Handler).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,9 +66,9 @@ namespace web
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers(); // Needs to be added
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
-                endpoints.MapControllers(); // Needs to be added
             });
         }
     }
