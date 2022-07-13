@@ -26,7 +26,7 @@ namespace application.Jobs
                         Id = Guid.NewGuid(),
                         Title = "Techical Consultant",
                         Employer = "Microsoft",
-                        Description = "As a Technical Consultant at Microsoft, I am responsible for implementing technical solutions using Dynamics 365 and the Power Platform.",
+                        Description = "As a Technical Consultant at Microsoft, I am responsible for implementing technical solutions using Dynamics 365 and the Power Platform for Microsoft customers.",
                         StartDate= new DateTime(2021,03,15),
                         EndDate = null
                     },
